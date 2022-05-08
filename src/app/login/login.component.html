@@ -49,7 +49,7 @@
                       <label class="custom-control-label" for="customCheck">Se souvenir de moi</label>
                     </div>
                   </div>
-                  <button href="index.html" (click)="goToPages('index.html')" class="btn btn-primary btn-user btn-block">
+                  <button href="index.html" [routerLink]="['/home']"  class="btn btn-primary btn-user btn-block">
                     Se connecter
                   </button>
 
@@ -60,7 +60,7 @@
                   <a class="small" href="forgot-password.html">Mot de passe oublié ?</a>
                 </div>
                 <div class="text-center">
-                  <a class="small" href="register.html">Créer un compte !</a>
+                  <a class="small" [routerLink]="['/register']" >Créer un compte !</a>
                 </div>
               </div>
             </div>
