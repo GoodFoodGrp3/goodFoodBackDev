@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Register</title>
+  <title>GoodFood - Register</title>
 
 </head>
 
@@ -28,43 +28,55 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Créer un compte !</h1>
             </div>
-            <form class="user">
+            <form [formGroup]='creationForm'  (ngSubmit)="addUser()" class="user">
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                         placeholder="First Name">
+                         placeholder="Pseudo" formControlName="username">
                 </div>
+
                 <div class="col-sm-6">
                   <input type="text" class="form-control form-control-user" id="exampleLastName"
-                         placeholder="Last Name">
+                         placeholder="Nom" formControlName="lastname">
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group ">
                 <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                       placeholder="Email Address">
+                       placeholder="Email Address" formControlName="email">
               </div>
+
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="password" class="form-control form-control-user"
-                         id="exampleInputPassword" placeholder="Password">
+                         id="exampleInputPassword" placeholder="Mot de passe" formControlName="password">
                 </div>
                 <div class="col-sm-6">
                   <input type="password" class="form-control form-control-user"
-                         id="exampleRepeatPassword" placeholder="Repeat Password">
+                         id="exampleRepeatPassword" placeholder="Répéter le mot de passe" formControlName="cpassword">
                 </div>
+
               </div>
-              <a href="login.html" class="btn btn-primary btn-user btn-block">
+              <div class="form-group w-50 p-2">
+                <select (change)="changeStatus($event)" formControlName="status" class="custom-select " aria-label="Default select example">
+                  <option value="" selected disabled>Status</option>
+                  <option *ngFor="let status of Status" [ngValue]="status">
+                    {{ status }}
+                  </option>
+                </select>
+              </div>
+              <button href="login.html" class="btn btn-primary btn-user btn-block">
                 Enregistrer
-              </a>
-
-
+              </button>
             </form>
             <hr>
+            <div class="card-footer text-danger" *ngIf="notGoodPassword == true">
+              {{ erroraddUser }}
+            </div>
             <div class="text-center">
               <a class="small" href="forgot-password.html">Mot de passe oublié ?</a>
             </div>
             <div class="text-center">
-              <a class="small" href="login.html">Vous avez déjà un compte ? connectez vous !</a>
+              <a class="small" [routerLink]="['/login']">Vous avez déjà un compte ? connectez vous !</a>
             </div>
           </div>
         </div>
