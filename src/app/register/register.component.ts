@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit
 
   Status: any = ['RESTAURATEUR', 'COMPTABLE', 'COMMUNITY', 'EMPLOYEE','ADMINISTRATEUR'];
 
-  Succursale : any = ['Paris','Marseille','Paris'];
+  //Using Map
+  mapOffice = new Map<number, string>();
 
   erroraddUser : any;
   notGoodPassword = false;
@@ -26,6 +27,10 @@ export class RegisterComponent implements OnInit
               private router: Router) { }
 
   ngOnInit(): void {
+
+    this.mapOffice.set(1, "Paris");
+    this.mapOffice.set(2, "Marseille");
+    this.mapOffice.set(3, "Nice");
 
     this.initCreationForm();
   }
@@ -91,7 +96,7 @@ export class RegisterComponent implements OnInit
    */
   changeSuccursale(e: any)
   {
-    this.statusSuccursale?.setValue(e.target.value, {
+    this.succursaleName?.setValue(e.target.value, {
       onlySelf: true,
     });
   }
@@ -103,7 +108,7 @@ export class RegisterComponent implements OnInit
 
 
   // Access formcontrols getter
-  get statusSuccursale() {
+  get succursaleName() {
     return this.creationForm.get('succursale');
   }
 }
