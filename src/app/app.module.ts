@@ -10,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     RegisterComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    CategoriesComponent,
+    TopbarComponent
   ],
     imports: [
         BrowserModule,
