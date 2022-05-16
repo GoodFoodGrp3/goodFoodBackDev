@@ -15,7 +15,7 @@ export class CategoriesService {
 
   /**
    *
-   * Recuperation tous les categories
+   * Recuperation de toutes les categories
    */
   getAllCategories(): Observable<Categories[]> {
     const headers = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token')}

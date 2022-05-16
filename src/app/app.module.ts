@@ -12,6 +12,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     SidebarComponent,
     FooterComponent,
     CategoriesComponent,
-    TopbarComponent
+    TopbarComponent,
+    CommentsComponent
   ],
     imports: [
         BrowserModule,
