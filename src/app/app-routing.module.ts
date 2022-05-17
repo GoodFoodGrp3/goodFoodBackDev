@@ -6,6 +6,7 @@ import {RegisterComponent} from "./components/register/register.component";
 import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
 import {CategoriesComponent} from "./components/categories/categories.component";
 import {CommentsComponent} from "./components/comments/comments.component";
+import {CommoditiesComponent} from "./components/commodities/commodities.component";
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'comments', component: CommentsComponent,canActivate: [AuthGuard] },
+  { path: 'commodities', component: CommoditiesComponent,canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},
   { path: 'categories', component: CategoriesComponent , canActivate: [AuthGuard]},
   { path: '', redirectTo: 'home', pathMatch:'full'},

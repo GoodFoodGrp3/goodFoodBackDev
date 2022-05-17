@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { CommoditiesComponent } from './components/commodities/commodities.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CommentsComponent } from './components/comments/comments.component';
     FooterComponent,
     CategoriesComponent,
     TopbarComponent,
-    CommentsComponent
+    CommentsComponent,
+    CommoditiesComponent
   ],
     imports: [
         BrowserModule,
