@@ -20,6 +20,7 @@ import { MembersComponent } from './components/members/members.component';
 import { ErrorlogsComponent } from './components/errorlogs/errorlogs.component';
 import { OfficesComponent } from './components/offices/offices.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     MembersComponent,
     ErrorlogsComponent,
     OfficesComponent,
-    OrdersComponent
+    OrdersComponent,
+    ProductsComponent
   ],
     imports: [
         BrowserModule,
