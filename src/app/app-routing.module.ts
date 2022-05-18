@@ -11,6 +11,7 @@ import {CustomersComponent} from "./components/customers/customers.component";
 import {EmployeesComponent} from "./components/employees/employees.component";
 import {ErrorlogsComponent} from "./components/errorlogs/errorlogs.component";
 import {OfficesComponent} from "./components/offices/offices.component";
+import {OrdersComponent} from "./components/orders/orders.component";
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'customers', component: CustomersComponent,canActivate: [AuthGuard] },
   { path: 'error-logs', component: ErrorlogsComponent,canActivate: [AuthGuard] },
   { path: 'offices', component: OfficesComponent,canActivate: [AuthGuard] },
+  { path: 'orders', component: OrdersComponent,canActivate: [AuthGuard] },
   { path: 'employees', component: EmployeesComponent,canActivate: [AuthGuard] },
   { path: 'commodities', component: CommoditiesComponent,canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},

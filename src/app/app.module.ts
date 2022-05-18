@@ -19,6 +19,7 @@ import { EmployeesComponent } from './components/employees/employees.component';
 import { MembersComponent } from './components/members/members.component';
 import { ErrorlogsComponent } from './components/errorlogs/errorlogs.component';
 import { OfficesComponent } from './components/offices/offices.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OfficesComponent } from './components/offices/offices.component';
     EmployeesComponent,
     MembersComponent,
     ErrorlogsComponent,
-    OfficesComponent
+    OfficesComponent,
+    OrdersComponent
   ],
     imports: [
         BrowserModule,
