@@ -39,9 +39,6 @@ export class LoginService
    *
    * Recuperation de tous les membres
    */
-  getAllMembers(): Observable<Login[]> {
-    const headers = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
-    return this.httpClient.get<Login[]>(environment.apiUrl + '/employees',{'headers':headers});
-  }
+
 
 }

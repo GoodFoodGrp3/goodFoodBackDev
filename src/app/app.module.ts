@@ -17,6 +17,7 @@ import { CommoditiesComponent } from './components/commodities/commodities.compo
 import { CustomersComponent } from './components/customers/customers.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { MembersComponent } from './components/members/members.component';
+import { ErrorlogsComponent } from './components/errorlogs/errorlogs.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MembersComponent } from './components/members/members.component';
     CommoditiesComponent,
     CustomersComponent,
     EmployeesComponent,
-    MembersComponent
+    MembersComponent,
+    ErrorlogsComponent
   ],
     imports: [
         BrowserModule,
