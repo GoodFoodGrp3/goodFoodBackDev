@@ -10,6 +10,7 @@ import {CommoditiesComponent} from "./components/commodities/commodities.compone
 import {CustomersComponent} from "./components/customers/customers.component";
 import {EmployeesComponent} from "./components/employees/employees.component";
 import {ErrorlogsComponent} from "./components/errorlogs/errorlogs.component";
+import {OfficesComponent} from "./components/offices/offices.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'comments', component: CommentsComponent,canActivate: [AuthGuard] },
   { path: 'customers', component: CustomersComponent,canActivate: [AuthGuard] },
   { path: 'error-logs', component: ErrorlogsComponent,canActivate: [AuthGuard] },
+  { path: 'offices', component: OfficesComponent,canActivate: [AuthGuard] },
   { path: 'employees', component: EmployeesComponent,canActivate: [AuthGuard] },
   { path: 'commodities', component: CommoditiesComponent,canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},

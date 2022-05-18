@@ -18,6 +18,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { MembersComponent } from './components/members/members.component';
 import { ErrorlogsComponent } from './components/errorlogs/errorlogs.component';
+import { OfficesComponent } from './components/offices/offices.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ErrorlogsComponent } from './components/errorlogs/errorlogs.component';
     CustomersComponent,
     EmployeesComponent,
     MembersComponent,
-    ErrorlogsComponent
+    ErrorlogsComponent,
+    OfficesComponent
   ],
     imports: [
         BrowserModule,
