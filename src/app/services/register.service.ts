@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Employees} from "../interfaces/employees";
+import {RegisterEmployees} from "../interfaces/registerEmployees";
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 
@@ -16,7 +16,7 @@ export class RegisterService {
    *
    * Ajout Utilisateur
    */
-  addOneUser(employee: Employees)
+  addOneUser(employee: RegisterEmployees)
   {
     const body=JSON.stringify(employee);
     const headers = { 'content-type': 'application/json'}

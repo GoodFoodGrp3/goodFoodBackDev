@@ -1,4 +1,4 @@
-export interface Customers {
+export interface GetCustomers {
   id: number,
   lastname: string,
   firstname:string,

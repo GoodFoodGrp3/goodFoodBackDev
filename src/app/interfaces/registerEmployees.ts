@@ -1,4 +1,4 @@
-export interface Employees {
+export interface RegisterEmployees {
   id: number,
   username: string,
   status:string,

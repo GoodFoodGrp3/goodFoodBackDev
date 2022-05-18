@@ -15,6 +15,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { CommoditiesComponent } from './components/commodities/commodities.component';
 import { CustomersComponent } from './components/customers/customers.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { MembersComponent } from './components/members/members.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CustomersComponent } from './components/customers/customers.component';
     TopbarComponent,
     CommentsComponent,
     CommoditiesComponent,
-    CustomersComponent
+    CustomersComponent,
+    EmployeesComponent,
+    MembersComponent
   ],
     imports: [
         BrowserModule,

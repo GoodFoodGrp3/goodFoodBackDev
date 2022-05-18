@@ -1,25 +1,26 @@
 import { Injectable } from '@angular/core';
-import {GetCustomers} from "../interfaces/getCustomers";
 import {HttpClient} from "@angular/common/http";
+import {RegisterEmployees} from "../interfaces/registerEmployees";
 import {Observable} from "rxjs";
 import {Categories} from "../interfaces/categories";
 import {environment} from "../../environments/environment";
+import {GetEmployees} from "../interfaces/getEmployees";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomersService {
+export class EmployeesService {
 
-  customers!:GetCustomers[];
+  employees!:GetEmployees[];
 
   constructor(private httpClient: HttpClient) { }
 
   /**
    *
-   * Recuperation de tous les clients
+   * Recuperation de tous les employees
    */
-  getAllCustomers(): Observable<GetCustomers[]> {
+  getAllEmployees(): Observable<GetEmployees[]> {
     const headers = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
-    return this.httpClient.get<GetCustomers[]>(environment.apiUrl + '/customers',{'headers':headers});
+    return this.httpClient.get<GetEmployees[]>(environment.apiUrl + '/employees',{'headers':headers});
   }
 }

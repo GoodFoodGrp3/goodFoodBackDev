@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Customers} from "../../interfaces/customers";
+import {GetCustomers} from "../../interfaces/getCustomers";
 import {CustomersService} from "../../services/customers.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {CustomersService} from "../../services/customers.service";
 })
 export class CustomersComponent implements OnInit {
 
-  customers!:Customers[];
+  customers!:GetCustomers[];
 
   constructor(private customerService: CustomersService) { }
 
