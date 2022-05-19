@@ -1,5 +1,5 @@
 export interface Comments {
-  id: number,
+  comment_id: number,
   customer_id:{
     id:number,
     lastname:string,

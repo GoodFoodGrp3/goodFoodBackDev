@@ -47,9 +47,90 @@
                   <td>
 
                     <div class="col text-center">
-                      <button type="button" class="btn btn-danger">Supprimer</button><br/><br/>
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+                        Supprimer
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Voulez vous vraiment supprimez ce commentaire ?
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                              <button  type="button" class="btn btn-danger">Supprimer</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
+                    <br>
+                    <div class="col text-center">
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modifymodal">
+                        Modifier
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="modifymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="modifymodal">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Voulez vous vraiment modifier ce commentaire ?
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                              <button  type="button" class="btn btn-warning">Modifier</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <br>
+
+                    <div class="col text-center">
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addmodal">
+                        Ajouter
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="addmodal">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Voulez vous vraiment ajouter un commentaire ?
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                              <button  type="button" class="btn btn-info">Ajouter</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 </tbody>

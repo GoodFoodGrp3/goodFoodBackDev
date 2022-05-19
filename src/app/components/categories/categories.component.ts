@@ -9,6 +9,8 @@ import {Categories} from "../../interfaces/categories";
 })
 export class CategoriesComponent implements OnInit {
 
+  display = false;
+
 
   categories!:Categories[];
 
@@ -19,6 +21,12 @@ export class CategoriesComponent implements OnInit {
     this.getCategories();
   }
 
+  onPress() {
+    //this.display = true;
+
+    //To toggle the component
+    this.display = !this.display;
+  }
 
   /**
    *

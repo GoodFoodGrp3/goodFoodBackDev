@@ -10,12 +10,18 @@ import {CommentsService} from "../../services/comments.service";
 export class CommentsComponent implements OnInit {
 
   comments!:Comments[];
+  refreshPage = false;
 
   constructor(private commentsService:CommentsService) { }
 
   ngOnInit(): void {
 
     this.getComments();
+  }
+
+  refresh(){
+    this.ngOnInit();
+    this.refreshPage = false;
   }
 
   /**
@@ -28,5 +34,7 @@ export class CommentsComponent implements OnInit {
         this.comments = reponse;
       });
   }
+
+
 
 }

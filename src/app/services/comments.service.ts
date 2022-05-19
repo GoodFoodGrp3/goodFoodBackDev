@@ -22,4 +22,6 @@ export class CommentsService {
     const headers = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
     return this.httpClient.get<Comments[]>(environment.apiUrl + '/comments',{'headers':headers});
   }
+
+
 }
