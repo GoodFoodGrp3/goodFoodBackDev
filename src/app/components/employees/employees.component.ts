@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RegisterEmployees} from "../../interfaces/registerEmployees";
 import {EmployeesService} from "../../services/employees.service";
 import {GetEmployees} from "../../interfaces/getEmployees";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-employees',

@@ -31,7 +31,6 @@ const routes: Routes = [
   { path: 'commodities', component: CommoditiesComponent,canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},
   { path: 'categories', component: CategoriesComponent , canActivate: [AuthGuard]},
-  { path: '', redirectTo: 'home', pathMatch:'full'},
   { path: '**', redirectTo: 'home'}
 ];
 

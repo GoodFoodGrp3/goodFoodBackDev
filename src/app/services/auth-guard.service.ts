@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate
   constructor(public login: LoginService, public router: Router) { }
 
   canActivate(){
-    if(sessionStorage.getItem('token') != null)
+    if(sessionStorage.getItem('token') != null && sessionStorage.getItem('token')!.length > 1)
     {
       return true;
     }

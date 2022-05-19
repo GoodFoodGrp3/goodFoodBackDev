@@ -64,7 +64,6 @@ export class LoginComponent implements OnInit
       next: (data: any) =>
       {
         sessionStorage.setItem('token',data['token']);
-
         window.location.reload();
       },
 
@@ -73,8 +72,11 @@ export class LoginComponent implements OnInit
         this.errorLogin = error.error.details;
         this.errorConnection = true;
       }
-    });
+
+    }
+    );
   }
+
 
 
 }
