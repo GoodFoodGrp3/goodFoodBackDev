@@ -1,5 +1,5 @@
 <body class="bg-gradient-primary" xmlns="http://www.w3.org/1999/html">
-
+<app-topbar></app-topbar>
 <div class="container">
 
   <div class="card o-hidden border-0 shadow-lg my-5">
@@ -67,15 +67,10 @@
               </button>
             </form>
             <hr>
-            <div class="card-footer text-danger" *ngIf="notGoodPassword == true">
-              {{ erroraddUser }}
-            </div>
             <div class="text-center">
-              <a class="small" href="forgot-password.html">Mot de passe oublié ?</a>
+              <a class="align-items-sm-start" [routerLink]="['/home']">retour à l'accueil</a>
             </div>
-            <div class="text-center">
-              <a class="small" [routerLink]="['/login']">Vous avez déjà un compte ? connectez vous !</a>
-            </div>
+
           </div>
         </div>
       </div>

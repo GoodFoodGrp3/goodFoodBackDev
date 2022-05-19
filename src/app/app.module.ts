@@ -22,6 +22,7 @@ import { OfficesComponent } from './components/offices/offices.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProvidersComponent } from './components/providers/providers.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProvidersComponent } from './components/providers/providers.component';
     OfficesComponent,
     OrdersComponent,
     ProductsComponent,
-    ProvidersComponent
+    ProvidersComponent,
+    ProfilComponent
   ],
     imports: [
         BrowserModule,

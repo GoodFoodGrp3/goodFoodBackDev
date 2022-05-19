@@ -14,6 +14,7 @@ import {OfficesComponent} from "./components/offices/offices.component";
 import {OrdersComponent} from "./components/orders/orders.component";
 import {ProductsComponent} from "./components/products/products.component";
 import {ProvidersComponent} from "./components/providers/providers.component";
+import {ProfilComponent} from "./components/profil/profil.component";
 
 
 const routes: Routes = [
@@ -27,10 +28,12 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent,canActivate: [AuthGuard] },
   { path: 'products', component: ProductsComponent,canActivate: [AuthGuard] },
   { path: 'providers', component: ProvidersComponent,canActivate: [AuthGuard] },
+  { path: 'profil', component: ProfilComponent,canActivate: [AuthGuard] },
   { path: 'employees', component: EmployeesComponent,canActivate: [AuthGuard] },
   { path: 'commodities', component: CommoditiesComponent,canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},
   { path: 'categories', component: CategoriesComponent , canActivate: [AuthGuard]},
+  { path: '', redirectTo: 'home', pathMatch:'full'},
   { path: '**', redirectTo: 'home'}
 ];
 
