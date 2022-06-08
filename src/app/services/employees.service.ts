@@ -6,6 +6,7 @@ import {Categories} from "../interfaces/categories";
 import {environment} from "../../environments/environment";
 import {GetEmployees} from "../interfaces/getEmployees";
 import {Router} from "@angular/router";
+import {UpdateEmployee} from "../interfaces/updateEmployee";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class EmployeesService {
    *
    * Recuperation utilisateur actuel/connecté
    */
-  CheckUserToken(token: any): Observable<GetEmployees> {
+  CheckUserToken(token: string): Observable<GetEmployees> {
     const headers = { 'Authorization': 'Bearer ' + token}
     return this.httpClient.get<GetEmployees>(environment.apiUrl + '/employees/current',{'headers':headers});
   }
@@ -41,6 +42,26 @@ export class EmployeesService {
   getOneUser(id : number) : Observable<GetEmployees> {
     const headers = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
     return this.httpClient.get<GetEmployees>(environment.apiUrl + '/employees/' + id,{'headers':headers});
+  }
+
+
+  /**
+   *
+   * Modification Employee
+   */
+  updateEmployeeById(employee: UpdateEmployee, id : number) {
+    const body=JSON.stringify(employee);
+    const headers = { 'content-type': 'application/json','Authorization': 'Bearer ' + sessionStorage.getItem('token')}
+    this.httpClient.put<any>(environment.apiUrl + '/employees/profile/' + id, body,{'headers':headers} ).subscribe({
+      next: data => {
+        console.log("update successful");
+        window.location.reload();
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    });
+
   }
 
 }

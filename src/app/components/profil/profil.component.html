@@ -33,15 +33,16 @@
                 <h6 class="mb-0">Prénom</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value={{userConnected.firstname}}>
+                <input type="text" class="form-control" value={{userConnected.firstname}} formControlName="username">
               </div>
             </div>
+            <form [formGroup]="employeeForm" (ngSubmit)="updateEmployee()">
             <div class="row mb-3">
               <div class="col-sm-3">
                 <h6 class="mb-0">Nom</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value={{userConnected.lastname}}>
+                <input type="text" class="form-control" value={{userConnected.lastname}} formControlName="lastname">
               </div>
             </div>
             <div class="row mb-3">
@@ -49,7 +50,7 @@
                 <h6 class="mb-0">Email</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value={{userConnected.email}}>
+                <input type="text" class="form-control" value={{userConnected.email}} formControlName={{userConnected.email}}>
               </div>
             </div>
             <div class="row mb-3">
@@ -57,24 +58,19 @@
                 <h6 class="mb-0">Numéro interne</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value={{userConnected.private_number}}>
+                <input type="text" class="form-control" value={{userConnected.private_number}} formControlName={{userConnected.private_number}}>
               </div>
             </div>
 
-            <div class="row mb-3">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Status</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="Administrateur">
-              </div>
-            </div>
             <div class="row">
               <div class="col-sm-3"></div>
               <div class="col-sm-9 text-secondary">
-                <input type="button" class="btn btn-primary px-4" value="Modifier">
+                <input type="submit" class="btn btn-primary px-4" data-toggle="modal" data-target="#updateModal" value="Modifier">
+
+
               </div>
             </div>
+            </form>
           </div>
         </div>
         <div class="row">
@@ -91,7 +87,7 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-sm-3">
-                    <h6 class="mb-0">Confirmation du nouveau mot de passe</h6>
+                    <h6 class="mb-0">Confirmation du mot de passe</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     <input type="text" class="form-control" value="">
@@ -104,6 +100,31 @@
                     <input type="button" class="btn btn-primary px-4" value="Changer de mot de passe">
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Status</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" value="Administrateur">
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="button" class="btn btn-primary px-4" value="Changer de status">
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

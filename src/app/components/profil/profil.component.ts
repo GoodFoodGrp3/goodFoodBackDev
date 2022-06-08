@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EmployeesService} from "../../services/employees.service";
 import {GetEmployees} from "../../interfaces/getEmployees";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-profil',
@@ -11,11 +12,20 @@ export class ProfilComponent implements OnInit {
 
   userConnected!: GetEmployees;
 
-  constructor(private employeeService: EmployeesService) { }
+  employeeForm!: FormGroup;
+
+  errorForm = false;
+
+  constructor(private employeeService: EmployeesService, private formBuilder: FormBuilder,) { }
 
   ngOnInit(): void {
 
-    this.checkUsers(sessionStorage.getItem('token'));
+    if(sessionStorage.getItem('token'))
+    {
+      this.checkUsers(sessionStorage.getItem('token'));
+      this.initUserForm();
+    }
+
   }
 
 
@@ -40,5 +50,35 @@ export class ProfilComponent implements OnInit {
         this.userConnected = reponse;
       });
   }
+
+
+  /**
+   *
+   * Initialisation des formulaire
+   */
+  initUserForm(){
+    this.employeeForm = this.formBuilder.group({
+      username: [''],
+      lastname: [''],
+      private_number: [''],
+      email: ['']
+    })
+  }
+
+  /**
+   *
+   * Update de l'employee
+   */
+  updateEmployee(){
+        //this.employeeForm.get('username')! = ;
+        //this.employeeForm.get('private_number')!.setValue(this.userConnected.private_number);
+        //this.employeeForm.get('lastname')!.setValue(this.userConnected.lastname);
+        //this.employeeForm.get('email')!.setValue(this.userConnected.email);
+
+        this.employeeService.updateEmployeeById(this.userConnected,this.userConnected.id)
+        //this.errorForm = false;
+       // $('#changeUser').modal('hide');
+  };
+
 
 }

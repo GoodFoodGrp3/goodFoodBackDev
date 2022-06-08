@@ -6,6 +6,6 @@ export interface GetEmployees {
   lastname: string,
   firstname:string,
   private_number: string,
-  email:string
+  email:string,
   reports_to:number
 }

@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {RegisterService} from "../../services/register.service";
 import {RegisterEmployees} from "../../interfaces/registerEmployees";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-register',
@@ -23,6 +24,7 @@ export class RegisterComponent implements OnInit
   creationForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
+              private loginService: LoginService,
               private registerService: RegisterService,
               private router: Router) { }
 
@@ -68,6 +70,7 @@ export class RegisterComponent implements OnInit
     {
       this.registerService.addOneUser(this.creationForm.value).subscribe({
         next: data => {
+          //this.loginService.CheckUser(this.creationForm.value);
           this.router.navigateByUrl('/login');
         },
         error: error => {

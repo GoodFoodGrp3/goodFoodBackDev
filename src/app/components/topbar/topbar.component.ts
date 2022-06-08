@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
 })
 export class TopbarComponent implements OnInit {
 
-
   userConnected!: GetEmployees;
 
   constructor( private employeeService: EmployeesService, private router:Router) { }

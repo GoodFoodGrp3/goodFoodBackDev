@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -23,6 +24,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProvidersComponent } from './components/providers/providers.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { CommentModalComponent } from './modals/comment-modal/comment-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,15 +46,20 @@ import { ProfilComponent } from './components/profil/profil.component';
     OrdersComponent,
     ProductsComponent,
     ProvidersComponent,
-    ProfilComponent
+    ProfilComponent,
+    CommentModalComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
+        NgbModule,
         ReactiveFormsModule
     ],
+  entryComponents:[
+    CommentModalComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
