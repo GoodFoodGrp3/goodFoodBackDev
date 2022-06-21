@@ -53,10 +53,10 @@ export class CommentsComponent implements OnInit {
     modalRef.componentInstance.comments = this.comments;
 
     modalRef.result.then((commentCallBack) => {
-      if (commentCallBack) {
-        //this.myArray = commentCallBack.split(/([0-9]+)/).filter(Boolean);
+      if (commentCallBack != null) {
         //this.commentCallBack = commentCallBack;
-        this.updateCommentById(id,commentCallBack);
+        this.myArray = commentCallBack.split(/([0-9]+)/).filter(Boolean);
+        this.updateCommentById(Number(this.myArray[1]),this.myArray[0]);
       }
     });
 }

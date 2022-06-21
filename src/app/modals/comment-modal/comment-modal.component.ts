@@ -33,6 +33,7 @@ export class CommentModalComponent implements OnInit {
       if(comment.comment_id == this.idButton)
       {
         this.textareaForm.get('content')!.setValue(comment.content);
+        this.commentCallBack = this.textareaForm.get('content')?.value + comment.comment_id;
       }
     });
   }
@@ -44,7 +45,7 @@ export class CommentModalComponent implements OnInit {
   }
 
   validateModal(){
-    this.commentCallBack = this.textareaForm.get('content')?.value;
+    //this.commentCallBack = this.textareaForm.get('content')?.value;
     this.activeModal.close(this.commentCallBack);
   }
 
