@@ -12,6 +12,8 @@ export class ProfilComponent implements OnInit {
 
   userConnected!: GetEmployees;
 
+  Status: string[] = ['RESTAURATEUR', 'COMPTABLE', 'COMMUNITY', 'EMPLOYEE','ADMINISTRATEUR'];
+
   employeeForm!: FormGroup;
 
   errorForm = false;

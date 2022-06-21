@@ -20,7 +20,7 @@ export class CommentModalComponent implements OnInit {
   @Output() passEntry: EventEmitter<any> = new EventEmitter();
 
 
-  constructor(public activeModal: NgbActiveModal,) {
+  constructor(public activeModal: NgbActiveModal) {
 
 
   }
@@ -33,16 +33,19 @@ export class CommentModalComponent implements OnInit {
       if(comment.comment_id == this.idButton)
       {
         this.textareaForm.get('content')!.setValue(comment.content);
-        this.commentCallBack = comment.content;
       }
     });
   }
 
 
   closeModal() {
-    this.activeModal.close(this.commentCallBack);
+    this.activeModal.dismiss();
     //window.location.reload();
   }
 
+  validateModal(){
+    this.commentCallBack = this.textareaForm.get('content')?.value;
+    this.activeModal.close(this.commentCallBack);
+  }
 
 }

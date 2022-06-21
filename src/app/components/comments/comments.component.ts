@@ -15,6 +15,8 @@ export class CommentsComponent implements OnInit {
   comments!:Comments[];
   idButton!: number;
 
+  myArray!: Array<string>;
+  commentCallBack!:string;
   refreshPage = false;
 
   //commentForm: FormGroup;
@@ -52,7 +54,9 @@ export class CommentsComponent implements OnInit {
 
     modalRef.result.then((commentCallBack) => {
       if (commentCallBack) {
-        console.log(commentCallBack);
+        //this.myArray = commentCallBack.split(/([0-9]+)/).filter(Boolean);
+        //this.commentCallBack = commentCallBack;
+        this.updateCommentById(id,commentCallBack);
       }
     });
 }
@@ -81,17 +85,15 @@ export class CommentsComponent implements OnInit {
    *
    * Mise à jour commentaire
    */
-/*  updateCommentById(){
-    this.commentService.updateComment(this.userIdUpdateApi,this.commentForm.value).subscribe({
+  updateCommentById(id:number,comment:string){
+    this.commentService.updateComment(id,comment).subscribe({
       next: data => {
-        this.getComments();
+        window.location.reload();
       },
       error: error => {
         console.error('There was an error!', error);
       }
     });;
-    $('#changeStatus').modal('hide');
-    this.resetDroitToChange();
-  }*/
+  }
 
 }

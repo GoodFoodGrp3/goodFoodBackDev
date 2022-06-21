@@ -13,7 +13,7 @@ import {LoginService} from "../../services/login.service";
 export class RegisterComponent implements OnInit
 {
 
-  Status: any = ['RESTAURATEUR', 'COMPTABLE', 'COMMUNITY', 'EMPLOYEE','ADMINISTRATEUR'];
+  Status: string[] = ['RESTAURATEUR', 'COMPTABLE', 'COMMUNITY', 'EMPLOYEE','ADMINISTRATEUR'];
 
   //Using Map
   mapOffice = new Map<number, string>();

@@ -30,9 +30,9 @@ export class CommentsService {
    * Modification d'un commentaire
    */
   updateComment(id : number,content : string){
-    const body=JSON.stringify(content);
+    const body=JSON.stringify(content).replace(/\\"/g, '');
     const headers = { 'content-type': 'application/json','Authorization': 'Bearer ' + sessionStorage.getItem('token')}
-    return this.httpClient.put<UpdateComment>(environment.apiUrl + '/comments/' + id, body,{'headers':headers} );
+    return this.httpClient.put<UpdateComment>(environment.apiUrl + '/comments/' + id +'?newContent=' + content,body,{'headers':headers} );
   }
 
 
