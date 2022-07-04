@@ -35,6 +35,13 @@ export class CommentsService {
     return this.httpClient.put<UpdateComment>(environment.apiUrl + '/comments/' + id +'?newContent=' + content,body,{'headers':headers} );
   }
 
-
+  /**
+   *
+   * Suppression d'un commentaire
+   */
+  deleteComment(id:number){
+    const headers = {'Authorization': 'Bearer ' + sessionStorage.getItem('token')};
+    return this.httpClient.delete<any>(environment.apiUrl + '/comments/' + id,{'headers':headers});
+  }
 
 }

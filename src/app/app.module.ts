@@ -25,6 +25,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProvidersComponent } from './components/providers/providers.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { CommentModalComponent } from './modals/comment-modal/comment-modal.component';
+import { CommentDeleteComponent } from './modals/comment-delete/comment-delete.component';
+import { CommodityDeleteComponent } from './modals/commodity-delete/commodity-delete.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { CommentModalComponent } from './modals/comment-modal/comment-modal.comp
     ProductsComponent,
     ProvidersComponent,
     ProfilComponent,
-    CommentModalComponent
+    CommentModalComponent,
+    CommentDeleteComponent,
+    CommodityDeleteComponent
   ],
     imports: [
         BrowserModule,
@@ -58,7 +62,9 @@ import { CommentModalComponent } from './modals/comment-modal/comment-modal.comp
         ReactiveFormsModule
     ],
   entryComponents:[
-    CommentModalComponent
+    CommentModalComponent,
+    CommentDeleteComponent,
+    CommodityDeleteComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

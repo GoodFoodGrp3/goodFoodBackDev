@@ -23,4 +23,13 @@ export class CommoditiesService {
     const headers = { 'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
     return this.httpClient.get<Commodity[]>(environment.apiUrl + '/commoditys',{'headers':headers});
   }
+
+  /**
+   *
+   * Suppression d'une matière première
+   */
+  deleteCommodity(id:number){
+    const headers = {'Authorization': 'Bearer ' + sessionStorage.getItem('token')};
+    return this.httpClient.delete<any>(environment.apiUrl + '/commoditys/' + id,{'headers':headers});
+  }
 }

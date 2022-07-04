@@ -4,6 +4,7 @@ import {CommentsService} from "../../services/comments.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { CommentModalComponent} from "../../modals/comment-modal/comment-modal.component";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {CommentDeleteComponent} from "../../modals/comment-delete/comment-delete.component";
 
 @Component({
   selector: 'app-comments',
@@ -16,7 +17,6 @@ export class CommentsComponent implements OnInit {
   idButton!: number;
 
   myArray!: Array<string>;
-  commentCallBack!:string;
   refreshPage = false;
 
   //commentForm: FormGroup;
@@ -53,13 +53,37 @@ export class CommentsComponent implements OnInit {
     modalRef.componentInstance.comments = this.comments;
 
     modalRef.result.then((commentCallBack) => {
-      if (commentCallBack != null) {
+      if (commentCallBack != null)
+      {
         //this.commentCallBack = commentCallBack;
         this.myArray = commentCallBack.split(/([0-9]+)/).filter(Boolean);
         this.updateCommentById(Number(this.myArray[1]),this.myArray[0]);
       }
     });
 }
+
+  openDeleteModal(commentId:number) {
+    const modalRef = this.modalService.open(CommentDeleteComponent,
+      {
+        backdrop: false,
+        //scrollable: true,
+        //windowClass: 'myCustomModalClass',
+        centered : true,
+        keyboard: false,
+
+      });
+
+    modalRef.componentInstance.idButton = commentId;
+    modalRef.componentInstance.comments = this.comments;
+
+    modalRef.result.then((deleteCommentCallBack) => {
+      if (deleteCommentCallBack != null)
+      {
+        //this.commentCallBack = commentCallBack;
+        this.deleteComment(commentId);
+      }
+    });
+  }
   /**
    *
    * Iniatilisation Formulaire
@@ -89,11 +113,27 @@ export class CommentsComponent implements OnInit {
     this.commentService.updateComment(id,comment).subscribe({
       next: data => {
         window.location.reload();
+        //spinner ?
       },
       error: error => {
         console.error('There was an error!', error);
       }
     });;
+  }
+
+  /**
+   *
+   * Suppression d'un commentaire
+   */
+  deleteComment(idComment:number) {
+    this.commentsService.deleteComment(idComment).subscribe({
+      next: data => {
+        window.location.reload();
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    });
   }
 
 }

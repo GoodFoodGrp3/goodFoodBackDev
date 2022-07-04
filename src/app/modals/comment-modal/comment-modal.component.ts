@@ -18,7 +18,7 @@ export class CommentModalComponent implements OnInit {
   @Input() public comments!: Comments[];
   @Input() public idButton!:number;
   @Output() passEntry: EventEmitter<any> = new EventEmitter();
-
+  private idcomment!:number;
 
   constructor(public activeModal: NgbActiveModal) {
 
@@ -32,8 +32,9 @@ export class CommentModalComponent implements OnInit {
     this.comments.forEach((comment, index) => {
       if(comment.comment_id == this.idButton)
       {
+        this.idcomment = comment.comment_id;
         this.textareaForm.get('content')!.setValue(comment.content);
-        this.commentCallBack = this.textareaForm.get('content')?.value + comment.comment_id;
+        //this.commentCallBack = this.textareaForm.get('content')?.value + comment.comment_id;
       }
     });
   }
@@ -45,7 +46,8 @@ export class CommentModalComponent implements OnInit {
   }
 
   validateModal(){
-    //this.commentCallBack = this.textareaForm.get('content')?.value;
+
+    this.commentCallBack = this.textareaForm.get('content')?.value + this.idcomment ;
     this.activeModal.close(this.commentCallBack);
   }
 
