@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h5 class="modal-title">Modifier les informations de la matière première</h5>
+  <button type="button" class="close" data-dismiss="modal" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="textareaForm">
+  <div class="modal-body" >
+    <p>Prix d'achat :</p>
+    <textarea  class="form-control col-xs-14" formControlName="buyPrice" ></textarea>
+    <p>Nom de la matière première :</p>
+    <textarea  class="form-control col-xs-14" formControlName="commodityName" ></textarea>
+    <p>id fournisseur :</p>
+    <textarea  class="form-control col-xs-14" formControlName="providerId" ></textarea>
+    <p>Description :</p>
+    <textarea  class="form-control col-xs-14" formControlName="commodityDescription" ></textarea>
+    <p>Quantité :</p>
+    <textarea  class="form-control col-xs-14" formControlName="quantity" ></textarea>
+    <p>Unité :</p>
+    <textarea  class="form-control col-xs-14" formControlName="unit" ></textarea>
+    <p>Fournisseur :</p>
+    <textarea  class="form-control col-xs-14" formControlName="taxeId" ></textarea>
+  </div>
+</form>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Fermer</button>
+  <button type="button" class="btn btn-primary" (click)="validateModal()">Modifier</button>
+</div>

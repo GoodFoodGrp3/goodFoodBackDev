@@ -12,7 +12,7 @@ import {Comments} from "../../interfaces/comments";
 export class CommentModalComponent implements OnInit {
 
   textareaForm = new FormGroup({
-    content: new FormControl('', [Validators.required])
+    content: new FormControl('', [Validators.required]),
   });
 
   @Input() public comments!: Comments[];

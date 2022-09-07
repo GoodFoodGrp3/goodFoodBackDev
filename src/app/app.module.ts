@@ -27,6 +27,7 @@ import { ProfilComponent } from './components/profil/profil.component';
 import { CommentModalComponent } from './modals/comment-modal/comment-modal.component';
 import { CommentDeleteComponent } from './modals/comment-delete/comment-delete.component';
 import { CommodityDeleteComponent } from './modals/commodity-delete/commodity-delete.component';
+import { CommodityModifyComponent } from './modals/commodity-modify/commodity-modify.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CommodityDeleteComponent } from './modals/commodity-delete/commodity-de
     ProfilComponent,
     CommentModalComponent,
     CommentDeleteComponent,
-    CommodityDeleteComponent
+    CommodityDeleteComponent,
+    CommodityModifyComponent
   ],
     imports: [
         BrowserModule,
@@ -64,7 +66,8 @@ import { CommodityDeleteComponent } from './modals/commodity-delete/commodity-de
   entryComponents:[
     CommentModalComponent,
     CommentDeleteComponent,
-    CommodityDeleteComponent
+    CommodityDeleteComponent,
+    CommodityModifyComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
