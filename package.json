@@ -5,12 +5,14 @@
     "ng": "ng",
     "start": "ng serve --prod",
     "build": "ng build --prod",
-    "heroku-postbuild": "npm install && npm run build",
+    "heroku-postbuild": "ng build --build",
+    "postinstall": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~13.3.3",
     "@angular/cli": "~13.3.3",
     "@angular/compiler-cli": "~13.3.0",
     "@angular/animations": "~13.3.0",
