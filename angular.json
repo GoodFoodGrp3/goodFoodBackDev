@@ -88,10 +88,6 @@
               "browserTarget": "current-directory:build:development"
             }
           },
-          "navigationFallback": {
-            "rewrite": "/index.html",
-            "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
-          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
