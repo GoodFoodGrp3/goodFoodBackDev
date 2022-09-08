@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit
   {
     if(sessionStorage.getItem('token') != null && sessionStorage.getItem('token')!.length > 1)
     {
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/home');
     }
 
     this.initConnexionForm();
@@ -64,7 +64,8 @@ export class LoginComponent implements OnInit
       next: (data: any) =>
       {
         sessionStorage.setItem('token',data['token']);
-        window.location.reload();
+        this.router.navigateByUrl('/home');
+        //window.location.reload();
       },
 
       error: (error: any) =>
