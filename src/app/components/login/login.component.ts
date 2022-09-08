@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit
       {
         sessionStorage.setItem('token',data['token']);
         this.router.navigateByUrl('/home');
-        //window.location.reload();
+        window.location.reload();
       },
 
       error: (error: any) =>
