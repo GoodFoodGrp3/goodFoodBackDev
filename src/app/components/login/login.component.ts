@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit
   {
     if(sessionStorage.getItem('token') != null && sessionStorage.getItem('token')!.length > 1)
     {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/');
     }
 
     this.initConnexionForm();
